@@ -15,11 +15,24 @@
     </head>
     <body>
         <div class="container-fluid p-0">
-            
-                    <h1 class="header py-3 mb-2 text-center">Chirper</h1>
+            <h1 class="header py-3 mb-0 text-center">Chirper</h1>
+            <div class="container-fluid chirpContainer m-0">
+                <div class="row vh-100">
+                    <div id="buffer" class="col-5">
+                        <div id="chirp" class="form-group border border-secondary rounded mt-3 p-2">
+                            <label for="user">Name</label>
+                            <input class="form-control" type="text" name="user">
+                            <label for="text">Message</label>
+                            <input class="form-control" type="text" name="text">
+                            <button class="btn btn-primary mt-2">Chirp</button>
+                        </div>
+
+                    </div>
+                    <div class="col-7 getChirps"></div>
                     
-                
-            
+                </div>
+
+            </div>
         </div>
 
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>

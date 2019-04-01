@@ -18,7 +18,7 @@ router.get('/:id?', (req, res) => {
 router.post('/', (req, res) => {
     chirpsStore.CreateChirp(req.body);
     res.send(chirpsStore.GetChirps());
-    // res.sendStatus(200);
+    // res.sendStatus(200);   **good for real world, not necessary for current purpose
 });
 
 router.put('/:id', (req, res) => {
@@ -27,17 +27,17 @@ router.put('/:id', (req, res) => {
 
     if (id) {
         chirpsStore.UpdateChirp(id, chirp);
-        res.sendStatus(200);
+        res.send(chirpsStore.GetChirps());
     } else {
         chirpsStore.CreateChirp(req.body);
-        res.sendStatus(200);
+        res.send(chirpsStore.GetChirps());
     }
 });
 
 router.delete('/:id', (req, res) => {
     let id = req.params.id;
     chirpsStore.DeleteChirp(id);
-    res.sendStatus(200);
+    res.send(chirpsStore.GetChirps());
 });
 
 module.exports = router;

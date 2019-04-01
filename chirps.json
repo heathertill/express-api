@@ -1,13 +1,1 @@
-{
-    "0": { "user": "Heather", "text": "Hello World!" },
-    "1": { "user": "Ann", "text": "gooooo!" },
-    "2": { "user": "el", "text": "bbb!" },
-    "3": { "user": "matt", "text": "ccc!" },
-    "4": { "user": "bill", "text": "ccc!" },
-    "5": { "user": "phil", "text": "sss!" },
-    "6": { "user": "phil", "text": "sss!" },
-    "7": { "user": "phil", "text": "sss!" },
-    "8": { "user": "phil", "text": "sss!" },
-    "9": { "user": "Ronnie", "text": "great time at the beach!" },
-    "nextid": 10
-}
+{"0":{"user":"Heather","text":"Hello World!"},"nextid":1}

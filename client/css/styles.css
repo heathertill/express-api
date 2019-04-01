@@ -1,8 +1,15 @@
 body {
-    /* background-color: aqua; */
-    color: red
+ 
 }
 
 .header {
     background-color: lightgrey
+}
+
+#buffer {
+    background-color: pink
+}
+
+#chirp {
+    background-color: white
 }

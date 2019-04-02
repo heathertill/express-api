@@ -1,1 +1,6 @@
-{"0":{"user":"Heather","text":"Hello!"},"4":{"user":"Caroline","text":"Roll Tide!!!!"},"5":{"user":"Davis","text":"Lazy every day!!!"},"6":{"user":"Davis","text":"Lazy day!!!"},"nextid":8}
+{
+    "0": { "user": "Heather", "text": "Hello!" },
+    "4": { "user": "Caroline", "text": "Roll Tide!!!!" },
+    "5": { "user": "Davis", "text": "Lazy every day!!!" },
+    "nextid": 10
+}

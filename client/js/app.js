@@ -24,7 +24,7 @@ const displayChirps = data => {
                     <div class="card-title">
                         <h3>${chirp.user}</h3>
                     </div>
-                <div class="card-text ml-3">
+                <div class="card-text">
                     <h4>${chirp.text}</h4>
                 </div>
             </div>
@@ -44,11 +44,12 @@ const displayChirps = data => {
                             <button class="close py-0 px-1" data-dismiss="modal" id="x-button" aria-label="Close">
                                 <span aria-hidden="true">&times;</span> 
                             </button>
+                            <h3>Edit Chirp</h3>
                         </div>
                         <div class="modal-body">
-                            <input class="input-border p-2" type="text" size="75" value="${chirp.user}" id="editChirpUser${chirp.id}">
+                            <input class="input-border p-2" type="text" size="48" value="${chirp.user}" id="editChirpUser${chirp.id}" style="color:darkgray; font-size: 1.5em">
                             <br>
-                            <input class="input-border p-2" type="text" size="75" value="${chirp.text}" id="editChirpText${chirp.id}">
+                            <input class="input-border p-2" type="text" size="48" value="${chirp.text}" id="editChirpText${chirp.id}" style="color:darkgray; font-size: 1.5em">
                         </div>
                         <div class="text-right pt-3 pl-3">
                             <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>

@@ -2,7 +2,6 @@
 
 const express = require('express');
 const chirpsStore = require('../chirpstore');
-const fs = require('fs');
 let router = express.Router();
 
 router.get('/:id?', (req, res) => {

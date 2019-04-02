@@ -1,4 +1,4 @@
-const displayChirps = (data) => {
+const displayChirps = data => {
     $(`#postChirps`).empty();
     let chirps = Object.keys(data).map(key => {
         return {
@@ -7,16 +7,16 @@ const displayChirps = (data) => {
             text: data[key].text
         };
     });
-  
-    
+
     chirps.pop();
     chirps.reverse();
     chirps.forEach(chirp => {
-      
         $(`#postChirps`).append(`
         <div class="card m-2 border">
             <div class="card-header text-right p-1">
-            <button onClick="deleteChirp(${chirp.id})" class="btn btn-sm btn-primary text-right p-0 px-1" id="deleteChirp">X</button>
+            <button onClick="deleteChirp(${
+                chirp.id
+            })" class="btn btn-sm btn-primary text-right p-0 px-1" id="deleteChirp">X</button>
             </div>
             <div class="card-body pt-1">
                 <div class="card-title">
@@ -34,7 +34,9 @@ const displayChirps = (data) => {
             </div>
         </div>
 
-        <div class="modal" id="chirpModal${chirp.id}" tabindex="-1" role="dialog">
+        <div class="modal" id="chirpModal${
+            chirp.id
+        }" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -44,12 +46,18 @@ const displayChirps = (data) => {
                         </button>
                     </div>
                 <div class="modal-body">
-                    <input type="text" value="${chirp.user}" id="editChirpUser${chirp.id}">
-                    <input type="text" value="${chirp.text}" id="editChirpText${chirp.id}">
+                    <input type="text" value="${chirp.user}" id="editChirpUser${
+            chirp.id
+        }">
+                    <input type="text" value="${chirp.text}" id="editChirpText${
+            chirp.id
+        }">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button onClick="editChirp(${chirp.id})" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                    <button onClick="editChirp(${
+                        chirp.id
+                    })" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
                 </div>
             </div>
         </div>
@@ -58,55 +66,44 @@ const displayChirps = (data) => {
     });
 };
 
-const deleteChirp = (id) => {
+const deleteChirp = id => {
     $.ajax({
-        type: "DELETE",
+        type: 'DELETE',
         url: `/api/chirps/${id}`
     }).then(data => displayChirps(data));
-}
+};
 
-const editChirp = (id) => {
-    
+const editChirp = id => {
     let editChirpUser = $(`#editChirpUser${id}`).val();
-    
+
     let editChirpText = $(`#editChirpText${id}`).val();
-    
+
     let data = {
         user: `${editChirpUser}`,
-        text: `${editChirpText}`,
-    }
-   
+        text: `${editChirpText}`
+    };
+
     $.ajax({
-        type: "PUT",
+        type: 'PUT',
         url: `/api/chirps/${id}`,
         data
     }).then(data => displayChirps(data));
-}
+};
 
 $.ajax({
-    type: "GET",
-    url: "/api/chirps"
+    type: 'GET',
+    url: '/api/chirps'
 }).then(data => displayChirps(data));
 
-$(`#submitChirp`).click((e) => {
+$(`#submitChirp`).click(e => {
     e.preventDefault();
-    // let userInput = $(`#userInput`).val();
-    // console.log(userInput);
-    // let userText = $(`#userText`).val();
-    // console.log(userText);
-    // let data = {
-    //     user: userInput,
-    //     text: userText
-    // }
-    let body = {
+    let data = {
         user: $('[name="user"]').val(),
         text: $('[name="text"]').val()
-    }
+    };
     $.ajax({
-        method: "POST",
-        url: "/api/chirps",
-        data: body
-    }).then(data => displayChirps(data))
-    
-    
-})
+        method: 'POST',
+        url: '/api/chirps',
+        data
+    }).then(data => displayChirps(data));
+});

@@ -1,9 +1,14 @@
 body {
- 
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: gainsboro
 }
 
 .header {
-    background-color: lightgrey
+    font-family: 'Alegreya SC', serif;
+    background-color: white;
+    color: darkgray;
+    font-size: 5.2em
+   
 }
 
 #buffer {
@@ -13,3 +18,5 @@ body {
 #chirp {
     background-color: white
 }
+
+

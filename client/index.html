@@ -19,43 +19,28 @@
     </head>
     <body>
         <div class="container-fluid p-0">
-            <div class="row justify-content-md-center">
-                <div class="col-md-10 p-4 m-4 header">
+            <div class="row justify-content-md-center sticky-top">
+                <div class="header col-md-10 p-4 m-4">
                     <p class="text-center">Chirper</p>
                 </div>
             </div>
             <div class="container chirpContainer p-3">
                 <div class="row vh-100">
                     <div id="buffer" class="col-5">
-                        <div id="chirp" class="form-group border mt-3 p-3">
-                            <div class="chirpBody p-2">
+                        <div class="form-group border mt-3 p-3 color-white">
+                            <div class="p-2 color-peach">
                                 <label class="mb-0" for="user">Name</label>
-                                <input
-                                    id="userInput"
-                                    class="form-control chirpInput"
-                                    type="text"
-                                    name="user"
-                                />
+                                <input id="userInput" class="form-control input-border" type="text" name="user"/>
                                 <label class="mb-0" for="text">Message</label>
-                                <input
-                                    id="userText"
-                                    class="form-control chirpInput"
-                                    type="text"
-                                    name="text"
-                                />
+                                <input id="userText" class="form-control input-border" type="text" name="text"/>
                                 <div class="text-right">
-                                    <button
-                                        id="submitChirp"
-                                        class="btn btn-outline-light mt-3 py-0 text-right"
-                                        type="submit"
-                                    >
-                                        Chirp
-                                    </button>
+                                    <button id="submitChirp" class="btn btn-outline-light mt-3 py-0 text-right" type="submit">Chirp</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div id="postChirps" class="col-7 getChirps"></div>
+                    <div class="col-7 getChirps"id="postChirps">
+                    </div>
                 </div>
             </div>
         </div>

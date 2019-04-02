@@ -7,45 +7,31 @@ body {
 .header {
     font-family: 'Alegreya SC', serif;
     background-color: white;
-    
     font-size: 5.2em
 }
 
-.chirpInput {
+.input-border {
     border: none
 }
 
-#chirp {
+.color-white {
     background-color: white
 }
 
-.chirpBody {
+.color-peach {
     background-color: rgba(239, 179, 133, .5)
     
 }
 
-.postBody {
+.color-pea {
     background-color: rgba(204, 204, 102, .5)
 }
 
-#x-button {
-    background-color:rgb(239, 179, 133);
-    color: white
-}
+
 
 .btn {
     background-color: rgba(126, 171, 206, .7)
 }
 
-.card-body {
-    background-color: white
-}
 
-.modal-content {
-    background-color: rgba(204, 204, 102, .5)
-}
-
-.modal-div {
-    background-color: white
-}
 

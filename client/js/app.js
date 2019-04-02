@@ -12,25 +12,28 @@ const displayChirps = data => {
     chirps.reverse();
     chirps.forEach(chirp => {
         $(`#postChirps`).append(`
-        <div class="card m-2 border">
-            <div class="card-header text-right p-1">
+        <div class="card m-3 p-3 border">
+            <div class="postBody">
+            <div class="text-right p-1">
             <button onClick="deleteChirp(${
                 chirp.id
-            })" class="btn btn-sm btn-primary text-right p-0 px-1" id="deleteChirp">X</button>
+            })" class="btn btn-sm btn-outline-light text-right py-0 px-1" id="x-button">X</button>
             </div>
-            <div class="card-body pt-1">
+            <div class="card-body p-2 m-4">
                 <div class="card-title">
                     <h3>${chirp.user}</h3>
                 </div>
-                <div class="card-text ml-3">${chirp.text}</div>
+                <div class="card-text ml-3">
+                    <h4>${chirp.text}</h4>
+                </div>
             </div>
-            <div class="card-footer text-right">
-                ${chirp.id}
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#chirpModal${
+            <div class="text-right p-2">
+                <button type="button" class="btn py-0 btn-outline-light" data-toggle="modal" data-target="#chirpModal${
                     chirp.id
                 }">
                 Edit
                 </button>
+            </div>
             </div>
         </div>
 
@@ -38,28 +41,27 @@ const displayChirps = data => {
             chirp.id
         }" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">${chirp.user} & ${chirp.id}</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div class="modal-div p-3">
+                <div class="modal-content p-2">
+                    <div class="m-1 pl-2 pb-2">
+                        
+                        <button type="button" class="close py-0 px-1" data-dismiss="modal" id="x-button" aria-label="Close">
                         <span aria-hidden="true">&times;</span> 
                         </button>
                     </div>
                 <div class="modal-body">
-                    <input type="text" value="${chirp.user}" id="editChirpUser${
-            chirp.id
-        }">
-                    <input type="text" value="${chirp.text}" id="editChirpText${
-            chirp.id
-        }">
+                    <input type="text" size="75" value="${chirp.user}" id="editChirpUser${chirp.id}">
+                    <br>
+                    <input type="text" size="75" value="${chirp.text}" id="editChirpText${chirp.id}">
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <div class="text-right pt-3 pl-3">
+                    <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
                     <button onClick="editChirp(${
                         chirp.id
-                    })" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                    })" type="button" class="btn btn-outline-light" data-dismiss="modal">Save changes</button>
                 </div>
             </div>
+        </div>
         </div>
 </div>
         `);

@@ -1,6 +1,1 @@
-{
-    "0": { "user": "Heather", "text": "Hello!" },
-    "4": { "user": "Caroline", "text": "Roll Tide!!!!" },
-    "5": { "user": "Davis", "text": "Lazy every day!!!" },
-    "nextid": 10
-}
+{"0":{"user":"Heather","text":"Hello!"},"4":{"user":"Caroline","text":"Roll Tide!!!!"},"10":{"user":"Kenneth","text":"I'm hungry"},"nextid":21}

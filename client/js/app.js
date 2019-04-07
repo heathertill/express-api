@@ -103,4 +103,6 @@ $(`#submitChirp`).click(e => {
         url: '/api/chirps',
         data
     }).then(data => displayChirps(data));
+    $(`#userInput`).val('');
+    $(`#userText`).val('')
 });
